@@ -4,44 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="no-js">
-	<script>
-		const origin = 'https://github.com/' + window.location.origin.replace(/^(https\:\/\/)(\S+?)\..*$/, '$2') + window.location.pathname.replace(/index\.html.*$/, '') + 'raw/master/'
-		window.addEventListener('load', () => {
-			const source = origin + '_zips/all.zip';
-			
-			document.body.insertAdjacentHTML('afterbegin',
-				`<a download style="display: block;
-	                                    width: 120px;
-	                                    height: 30px;
-	                                    line-height: 30px;
-	                                    background-color: #5280F6;
-	                                    color: #fff;
-	                                    text-align: center;
-	                                    text-decoration: none;
-	                                    position: fixed;
-										top: 65px;
-										right: 20px;
-										z-index: 99;"
-				href="${source}">Download all</a>`
-			)
-			document.querySelectorAll('iframe')
-				.forEach(i => {
-					const zip = origin + '_zips/' + i.src.replace(/(^.*\/banners\/(.*)\/.*$)/, '$2') + '.zip'
-					i.parentElement.insertAdjacentHTML('beforeend',
-						`<a download style="display: block;
-	                                    width: 100px;
-	                                    height: 30px;
-	                                    line-height: 30px;
-	                                    background-color: #5280F6;
-	                                    color: #fff;
-	                                    text-align: center;
-	                                    text-decoration: none;
-	                                    margin-top: 10px;"
-						href="${zip}">Download</a>`
-					)
-				})
-		})
-	</script>
+	<script src="https://kovalevichd.github.io/delve_util/buttons_download.js"></script>
 	<button class="replay-button" type="button" onClick="resetAnimations();"></button>
 	<div id="adblocker" class="adblocker">It looks like you're using an ad blocker, which <em>may</em> cause some banner previews to break or not show up properly.</div>
 	<div id="grid" class="grid">
